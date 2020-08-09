@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset= 'UTF-8' name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='style.css'>
+    <link rel = 'stylesheet' href = 'http://fonts.googleapis.com/css?family=Lobster' type='text/css'>
+    <title> TAXI BOOKING WEB APPLICATION</title>
+</head>
+
+<body>
+       <h1 style= "font-family:Lobster"> 
+       <script>
+        var today = new Date();
+        var hrs = today.getHours();
+        var greeting;
+        if(hrs > 18)
+        greeting = 'Good Evening';
+        else if(hrs > 12)
+        greeting = 'Good Afternoon';
+        else if (hrs > 0)
+        greeting = 'Good Morning';
+        else
+        greeting = 'Welcome';
+        document.write(greeting + '! Book a Taxi');
+       </script>
+       </h1><br>
+
+       <img src='grey.jpg'></img> <br> <br> <br>
+
+       <datalist id='locations'>
+        <option value=A>
+        <option value=B>
+        <option value=C>
+        <option value=D>
+        <option value=E>
+        <option value=F>
+      </datalist>
+      
+       <div id='details'>
+       <label>PICKUP POINT <input id='pickUpPoint' list='locations'></label> <br> <br>
+       <label>DROP POINT <input id='dropPoint' list='locations'></label> <br>  <br>
+       <label>PICKUP TIME(0-23 hrs) <input id='pickUpTime'></label> <br>  <br> <br>
+       </div>
+
+      <input type='button' value='BOOK TAXI' id='bookTaxi'><br>   
+      <h3><div id = 'taxiAlloted'></div></h3><br>
+
+      <input type='button' value='TAXI STATUS' id='taxiStatus'> 
+      <div id = 'display'></div>
+     
+     <script src='app.js'></script>
+
+</body>
+
+</html>
