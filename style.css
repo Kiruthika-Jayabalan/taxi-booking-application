@@ -3,13 +3,17 @@ body
     font-family: 'Times New Roman', Times, serif;
     text-align: center ;
     background-color: darkgrey;
-    max-width: 75%;
+    font-weight: bold;
+}
+
+h1, h3, input
+{
+    max-width: 100%;
 }
 
 #container{
     border-radius: 5px;
     padding: 20px;
-    font-weight: bold;
 }
 
 img{
@@ -17,7 +21,7 @@ img{
     margin-left: auto;
     margin-right: auto;
     max-width:75%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(56, 55, 55, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .col25
