@@ -18,61 +18,51 @@ class customer {
     }
 }
 
-var today = new Date();
-var hrs = today.getHours();
-var greeting;
-if(hrs > 18)
-greeting = 'Good Evening';
-else if(hrs > 12)
-greeting = 'Good Afternoon';
-else if (hrs > 0)
-greeting = 'Good Morning';
-else
-greeting = 'Welcome';
-
-document.getElementById('greeting').innerHTML=`${greeting}! Book a Taxi &#9829;`;
-
-var taxiCount=3, customerId=0, taxis=[], customers=[];
+var taxiCount=3, customerId=0, taxis=[], customers=[], table;
 
 var book = document.getElementById('bookTaxi');
 book.addEventListener('click', bookTaxi, false);
 
 var taxiState = document.getElementById('taxiStatus');
-taxiState.addEventListener('click', taxiUtility, false);
-
-var display = document.getElementById('display');
-
-var cursor = document.getElementById('pickUpTime');
-cursor.addEventListener('focus', clear, false);
+taxiState.addEventListener('click', taxiStatusUtility, false);
 
 var object = document.getElementById('taxiAlloted');
 
-function clear()
-{
+var display = document.getElementById('display');
+
+document.getElementById('pickUpPoint').addEventListener('focus', function(){
+    display.textContent='';
     object.textContent='';
-}
+}, false);
 
 window.onload = function() {
+
     pickUpPoint.focus();
-  };
-/*
-function getTaxiCount()
-{
-    taxiCount=prompt('Enter the number of taxis');
-*/
+    var today = new Date();
+    var hrs = today.getHours();
+    var greeting;
+    if(hrs > 18)
+      greeting = 'Good Evening';
+    else if(hrs > 12) 
+      greeting = 'Good Afternoon';
+    else if (hrs > 0)
+      greeting = 'Good Morning';
+    else
+      greeting = 'Welcome';
+    document.getElementById('greeting').innerHTML=`${greeting}! Book a Taxi &#9829;`;
+
     for(var taxiNo=0; taxiNo<taxiCount; taxiNo++)
     {
-    taxis.push(new taxi());    
-    for(var hr=0; hr<24; hr++)
-    taxis[taxiNo].time.push(0);
+      taxis.push(new taxi());    
+      for(var hr=0; hr<24; hr++)
+      taxis[taxiNo].time.push(0);
     }
-//}
+
+  };
 
 function bookTaxi()
 {
     display.innerHTML='';
-    table='';
-
     var pickUpPoint, dropPoint, pickUpTime, dropTime, distance, bookedTaxi=-1, optimalDis = Number.MAX_VALUE, time, fare;
     
     pickUpPoint = document.getElementById('pickUpPoint').value;
@@ -109,7 +99,7 @@ function bookTaxi()
                  else if(temp == optimalDis)
                  {
                     if(taxis[bookedTaxi].amount > taxis[taxiNo].amount)
-                        bookedTaxi = taxiNo;
+                     bookedTaxi = taxiNo;
                  }
             }
         }
@@ -131,18 +121,26 @@ function bookTaxi()
         object.textContent = 'We are sorry! All taxis are booked.';
 
    customerId++;
+   clear();
+}
+
+
+function clear()
+{
    document.getElementById('pickUpPoint').value='';
    document.getElementById('dropPoint').value='';
    document.getElementById('pickUpTime').value='';
 }
 
-var table='';
-
-function taxiUtility()
+function taxiStatusUtility()
 {
+    clear();
     object.textContent='';
+    table='';
+
     for(var taxiNo=0; taxiNo<taxiCount; taxiNo++)
     taxiStatus(taxiNo);
+
     display.innerHTML = table;
 }
 
@@ -173,6 +171,5 @@ function taxiStatus(taxiNo)
             </tr>`; 
        }
 
-       table+=`</table><br>
-       Earnings - Rs.${taxis[taxiNo].amount} <br> <br> <br>`;
+       table+=`</table> <br> Earnings - Rs.${taxis[taxiNo].amount} <br> <br> <br>`;
 }
