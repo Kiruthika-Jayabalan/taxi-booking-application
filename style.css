@@ -1,19 +1,43 @@
-html, body
+body
 {
-    font-family:Lobster;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center ;
-    background-color: yellow;
-    height:100%;
+    background-color: darkgrey;
 }
 
-label{
-    margin-left: auto;
-    margin-right: auto;
-    float:right;
-    margin-right: 550px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+#container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 5px;
+    padding: 20px;
     font-weight: bold;
 }
+
+img{
+    border-radius: 100px;
+}
+
+.col25
+{
+  float: left;
+  display: flex;
+  justify-content: flex-end;
+  width: 49%;
+}
+
+.col75
+{
+  float: right;
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+    .col25, .col75, input[type=button] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
 
 table
 { 
@@ -57,8 +81,9 @@ table tbody tr:last-of-type
     margin-right: auto;
 }
 
-input[type="button"] {
-    background-color: #000000;
+input[type="button"]
+ {
+ background-color: #000000;
   border: none;
   border-radius: 2mm;
   color: white;
@@ -69,4 +94,4 @@ input[type="button"] {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  }
+}
