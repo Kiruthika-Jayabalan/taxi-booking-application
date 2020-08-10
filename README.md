@@ -1,6 +1,6 @@
 # taxi-booking-application
 
-Design a Call taxi booking application
+Call taxi booking application design
 -There are n number of taxi’s. For simplicity, assume 4. But it should work for any number of taxi’s.
 -The are 6 points(A,B,C,D,E,F)
 -All the points are in a straight line, and each point is 15kms away from the adjacent points.
