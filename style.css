@@ -31,13 +31,6 @@ img{
   width: 50%;
 }
 
-@media screen and (max-width: 600px) {
-    .col25, .col75, input[type=button] {
-      width: 100%;
-      margin-top: 0;
-    }
-  }
-
 table
 { 
     border-collapse: collapse;     
