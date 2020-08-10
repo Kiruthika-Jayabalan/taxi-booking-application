@@ -18,6 +18,20 @@ class customer {
     }
 }
 
+var today = new Date();
+var hrs = today.getHours();
+var greeting;
+if(hrs > 18)
+greeting = 'Good Evening';
+else if(hrs > 12)
+greeting = 'Good Afternoon';
+else if (hrs > 0)
+greeting = 'Good Morning';
+else
+greeting = 'Welcome';
+
+document.getElementById('greeting').innerHTML=`${greeting}! Book a Taxi &#9829;`;
+
 var taxiCount=3, customerId=0, taxis=[], customers=[];
 
 var book = document.getElementById('bookTaxi');
@@ -159,5 +173,5 @@ function taxiStatus(taxiNo)
        }
 
        table+=`</table><br>
-       Earnings - ${taxis[taxiNo].amount} <br> <br> <br>`;
+       Earnings - Rs.${taxis[taxiNo].amount} <br> <br> <br>`;
 }
