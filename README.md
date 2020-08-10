@@ -17,4 +17,3 @@ Call taxi booking application design
 
             A---15km--B--15km--C--15km--D--15km--E--15km--F
 
-Initially all taxis in A pt.
