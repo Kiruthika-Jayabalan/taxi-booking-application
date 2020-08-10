@@ -6,11 +6,6 @@ body
     font-weight: bold;
 }
 
-h1, h3, input
-{
-    max-width: 100%;
-}
-
 #container{
     border-radius: 5px;
     padding: 20px;
@@ -45,7 +40,7 @@ table
     border-collapse: collapse;     
     margin: 25px 0;
     font-size: .9 em;
-    min-width: 400px;   
+    max-width: 75%;  
     border-radius: 5px 5px 0 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 15);
 }
@@ -59,11 +54,6 @@ table thead tr{
 table th, td
 {
     padding: 12px 15px;
-}
-
-table tbody tr
-{
-   border-bottom: 1px solid #dddddd;
 }
 
 table tbody tr:nth-of-type(even)
