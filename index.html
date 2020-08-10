@@ -4,12 +4,11 @@
 <head>
     <meta charset= 'UTF-8' name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='style.css'>
-    <link rel = 'stylesheet' href = 'http://fonts.googleapis.com/css?family=Lobster' type='text/css'>
     <title> TAXI BOOKING WEB APPLICATION</title>
 </head>
 
 <body>
-       <h1 style= "font-family:Lobster"> 
+       <h1> 
        <script>
         var today = new Date();
         var hrs = today.getHours();
@@ -37,10 +36,13 @@
         <option value=F>
       </datalist>
       
-       <div id='details'>
-       <label>PICKUP POINT <input id='pickUpPoint' list='locations'></label> <br> <br>
-       <label>DROP POINT <input id='dropPoint' list='locations'></label> <br>  <br>
-       <label>PICKUP TIME(0-23 hrs) <input id='pickUpTime'></label> <br>  <br> <br>
+       <div id='container'>
+       <div class = 'col25'><label>PICKUP POINT </label></div>
+       <div class ='col75'><input id='pickUpPoint' list='locations'></div><br> <br>
+       <div class = 'col25'><label>DROP POINT </label></div>
+       <div class = 'col75'><input id='dropPoint' list='locations'></div><br>  <br>
+       <div class = 'col25'><label>PICKUP TIME(0-23 hrs) </label></div>
+       <div class = 'col75'><input id='pickUpTime'></div> <br>  <br> <br>
        </div>
 
       <input type='button' value='BOOK TAXI' id='bookTaxi'><br>   
