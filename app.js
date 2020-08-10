@@ -140,6 +140,7 @@ var table='';
 
 function taxiUtility()
 {
+    object.textContent='';
     for(var taxiNo=0; taxiNo<taxiCount; taxiNo++)
     taxiStatus(taxiNo);
     display.innerHTML = table;
